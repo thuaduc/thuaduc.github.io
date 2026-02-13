@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>It's a Date! 💕</title>
+    <title>Yeeeeeeeeeeeeeeeeeeeeeeeeee 💕</title>
     <style>
         * {
             margin: 0;
@@ -62,35 +62,21 @@
             line-height: 1.6;
         }
 
-        .images-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .image-box {
-            width: 100%;
-            height: 250px;
+        .image-container {
+            margin: 40px auto;
+            width: 80%;
+            max-width: 80%;
             border-radius: 15px;
             overflow: hidden;
             background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             border: 3px solid #e91e63;
         }
 
-        .image-box img {
+        .image-container img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .placeholder-text {
-            color: #e91e63;
-            font-size: 1em;
-            opacity: 0.5;
+            height: auto;
+            display: block;
+            vertical-align: middle;
         }
 
         .emoji-rain {
@@ -139,10 +125,6 @@
         }
 
         @media (max-width: 600px) {
-            .images-container {
-                grid-template-columns: 1fr;
-            }
-            
             h1 {
                 font-size: 2em;
             }
@@ -162,26 +144,15 @@
         <div class="hearts-decoration">💖💕💗💝💘</div>
         
         <p class="message">
-            Yay! I'm so happy you said yes! 😊<br>
-            Get ready for the best Valentine's Day ever! 🌹<br>
-            I can't wait to spend this special day with you! 💕
+            anh rất vui vì được là valentine của em. a mong mình có thật nhiều valentine cùng nhau nhé 💕💕💕
         </p>
 
-        <div class="images-container">
-            <div class="image-box">
-                <!-- Replace the src below with your first image URL -->
-                <!-- <img src="your-image-url-1.jpg" alt="Us Together"> -->
-                <p class="placeholder-text">Picture 1 📸</p>
-            </div>
-            <div class="image-box">
-                <!-- Replace the src below with your second image URL -->
-                <!-- <img src="your-image-url-2.jpg" alt="Us Together"> -->
-                <p class="placeholder-text">Picture 2 📸</p>
-            </div>
+        <div class="image-container">
+            <img src="date.png" alt="Us Together">
         </div>
 
         <p class="message" style="font-size: 1.3em; color: #e91e63;">
-            ❤️ Looking forward to our date! ❤️
+            ❤️ i loveee youuuuuuuu ❤️
         </p>
 
         <button class="back-btn" onclick="window.location.href='index.html'">

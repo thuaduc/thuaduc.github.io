@@ -119,7 +119,7 @@
         .image-container {
             margin: 30px 0;
             width: 100%;
-            height: 300px;
+            aspect-ratio: 16 / 9;
             border-radius: 15px;
             overflow: hidden;
             background: linear-gradient(135deg, #fce4ec, #f8bbd0);
@@ -129,10 +129,18 @@
             border: 3px solid #e91e63;
         }
 
-        .image-container img {
+        .image-container img,
+        .image-container video {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+        }
+
+        .image-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
         }
 
         .placeholder-text {
@@ -174,7 +182,7 @@
             background: linear-gradient(135deg, #eb3349, #f45c43);
             color: white;
             position: relative;
-            transition: all 0.1s ease;
+            transition: none;
         }
 
         @media (max-width: 600px) {
@@ -188,7 +196,7 @@
             }
 
             .image-container {
-                height: 250px;
+                aspect-ratio: 16 / 9;
             }
         }
     </style>
@@ -196,7 +204,7 @@
 <body>
     <!-- Password Screen -->
     <div class="password-container" id="passwordScreen">
-        <h2>🔒 Enter Password</h2>
+        <h2>🔒 Mật khẩu máy tính của em</h2>
         <input type="password" id="passwordInput" placeholder="Enter password..." onkeypress="if(event.key==='Enter') checkPassword()">
         <button onclick="checkPassword()">Enter</button>
         <p class="error-message" id="errorMessage">❌ Wrong password! Try again.</p>
@@ -210,17 +218,24 @@
         <h1>Will You Be My Valentine? 💝</h1>
         
         <div class="image-container">
-            <!-- Replace the src below with your image URL -->
+            <!-- Option 1: Your own video (put video.mp4 in same folder or use full URL) -->
+            <video src="video.mp4" autoplay loop muted playsinline></video>
+
+            <!-- Option 2: YouTube embed - use the embed URL, e.g. https://www.youtube.com/embed/VIDEO_ID -->
+            <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" allow="autoplay" allowfullscreen></iframe> -->
+
+            <!-- Option 3: Image -->
             <!-- <img src="your-image-url.jpg" alt="Us Together"> -->
-            <p class="placeholder-text">Our Picture Here 📸</p>
+
+            <!-- <p class="placeholder-text">Our Picture or Video Here 📸🎬</p> -->
         </div>
 
         <div class="button-container">
             <button class="btn yes-btn" onclick="window.location.href='date.html'">
-                YES! 💕
+                Có 💕
             </button>
             <button class="btn no-btn" id="noBtn">
-                No 😢
+                Đéo 😢
             </button>
         </div>
     </div>
@@ -259,56 +274,59 @@
         `;
         document.head.appendChild(style);
 
-        // No button movement
+        // No button movement - runs away fast so user can never click it
         const noBtn = document.getElementById('noBtn');
+        const container = document.querySelector('.container');
         let moveCount = 0;
+        const PROXIMITY_RADIUS = 120; // Move when cursor is within this many px
 
-        noBtn.addEventListener('mouseenter', function(e) {
+        function moveNoButton() {
             moveCount++;
-            const maxMove = Math.min(50 + moveCount * 10, 150); // Increases movement over time
+            const maxMove = Math.min(80 + moveCount * 15, 280); // Bigger jumps, higher cap
             
             const randomX = (Math.random() - 0.5) * maxMove * 2;
             const randomY = (Math.random() - 0.5) * maxMove * 2;
             
-            // Get current position
             const rect = noBtn.getBoundingClientRect();
-            const containerRect = document.querySelector('.container').getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
             
-            // Calculate new position ensuring it stays within container
             let newX = rect.left - containerRect.left + randomX;
             let newY = rect.top - containerRect.top + randomY;
             
-            // Boundary checks
-            newX = Math.max(0, Math.min(newX, containerRect.width - rect.width));
-            newY = Math.max(0, Math.min(newY, containerRect.height - rect.height));
+            newX = Math.max(10, Math.min(newX, containerRect.width - rect.width - 10));
+            newY = Math.max(10, Math.min(newY, containerRect.height - rect.height - 10));
             
             noBtn.style.position = 'absolute';
             noBtn.style.left = newX + 'px';
             noBtn.style.top = newY + 'px';
+        }
+
+        // Move when cursor gets close (before they can click)
+        container.addEventListener('mousemove', function(e) {
+            const rect = noBtn.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dist = Math.hypot(e.clientX - cx, e.clientY - cy);
+            if (dist < PROXIMITY_RADIUS) moveNoButton();
         });
 
-        // Mobile touch support
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('mousedown', function(e) { e.preventDefault(); moveNoButton(); });
+
+        // Mobile touch - move on touchstart and if finger approaches
         noBtn.addEventListener('touchstart', function(e) {
             e.preventDefault();
-            moveCount++;
-            const maxMove = Math.min(50 + moveCount * 10, 150);
-            
-            const randomX = (Math.random() - 0.5) * maxMove * 2;
-            const randomY = (Math.random() - 0.5) * maxMove * 2;
-            
-            const rect = noBtn.getBoundingClientRect();
-            const containerRect = document.querySelector('.container').getBoundingClientRect();
-            
-            let newX = rect.left - containerRect.left + randomX;
-            let newY = rect.top - containerRect.top + randomY;
-            
-            newX = Math.max(0, Math.min(newX, containerRect.width - rect.width));
-            newY = Math.max(0, Math.min(newY, containerRect.height - rect.height));
-            
-            noBtn.style.position = 'absolute';
-            noBtn.style.left = newX + 'px';
-            noBtn.style.top = newY + 'px';
+            moveNoButton();
         });
-    </script>
+        container.addEventListener('touchmove', function(e) {
+            if (e.touches.length) {
+                const rect = noBtn.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const dist = Math.hypot(e.touches[0].clientX - cx, e.touches[0].clientY - cy);
+                if (dist < PROXIMITY_RADIUS) moveNoButton();
+            }
+        }, { passive: true });
+Mâtk    </script>
 </body>
 </html>
