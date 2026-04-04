@@ -39,7 +39,7 @@ export const personalInfo = {
   github: "github.com/thuaduc",
   linkedin: "linkedin.com/in/thua-duc-nguyen-014634221",
   summary:
-    "Computer Science Master's student at TUM with a focus on Artificial Intelligence. Experienced in full-stack software engineering and AI/ML systems. Currently working at Celonis on backend services for real-time business intelligence, and conducting research in equivariant graph neural networks for humanoid robotics.",
+    "Computer Science Master's student at TUM with a focus on Artificial Intelligence. Experienced in full-stack software engineering and AI/ML systems. Currently working at Celonis on backend services for Insight Explorer.",
 };
 
 export const experiences: Experience[] = [
@@ -63,8 +63,7 @@ export const experiences: Experience[] = [
       "Developed and maintained a high-performance data aggregation application processing over 100,000 data points per hour, leveraging goroutines for concurrency.",
       "Implemented a metric service to measure key performance indicators like API calls, data processing, and database health; integrated with Datadog and AWS CloudWatch for real-time monitoring.",
       "Developed front-end essential features, enhancing product functionality and user experience.",
-      "Reduced load times, improved code reliability, and reduced bugs with unit testing and best practices.",
-      "Proficient in Golang, JavaScript, TypeScript, ReactJS, NestJS, Git, and Docker.",
+
     ],
   },
   {
@@ -94,15 +93,15 @@ export const education: Education[] = [
     location: "Munich, Germany",
     period: "Oct 2021 – Oct 2024",
     details: [
-      "GPA: 2.5 (German scale)",
+      "GPA: 2.5 (German scale, best = 1.0; ~3.4 US equivalent)",
       "Thesis: Lock-free concurrent range lock enabling multiple processes to concurrently access disjoint parts of a shared object — 3× performance improvement over state-of-the-art solutions.",
     ],
   },
 ];
 
 export const skills = {
-  "Programming": ["Python", "C", "C++", "JavaScript", "Golang"],
-  "Frameworks & Libraries": ["ReactJS", "NestJS", "Pandas", "NumPy", "PyTorch", "TensorFlow"],
+  "Programming": ["Python", "C", "C++", "JavaScript", "TypeScript", "Golang"],
+  "Frameworks & Libraries": ["ReactJS", "NestJS", "Pandas", "NumPy", "PyTorch", "TensorFlow", "JAX"],
   "Tools": ["Linux", "macOS", "Git", "Docker", "Jupyter Notebook", "Node.js"],
   "Languages": ["German (fluent)", "English (fluent)", "Vietnamese (native)"],
 };

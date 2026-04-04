@@ -63,6 +63,9 @@ const Index = () => (
         ))}
       </ResumeSection>
 
+      {/* Projects with tabs */}
+      <ProjectsSection />
+
       {/* Skills */}
       <ResumeSection title="Skills">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -85,9 +88,6 @@ const Index = () => (
           ))}
         </div>
       </ResumeSection>
-
-      {/* Projects with tabs */}
-      <ProjectsSection />
 
       {/* Certificates */}
       <ResumeSection title="Certificates">
