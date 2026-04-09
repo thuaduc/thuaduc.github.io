@@ -49,9 +49,9 @@ export const experiences: Experience[] = [
     location: "Munich, Germany",
     period: "Feb 2025 – Present",
     bullets: [
-      "Algorithm Engineering: Developed and optimized Cohort Trend Insights scoring engines, implementing Exponential Moving Average (EMA) models and SUM metric support for high-dimensional time-series data.",
-      "LLM & Knowledge Lake: Integrated LLMs and Knowledge Lake context nodes to power conversational insights, automated terminology standardization, and semantic attribute filtering.",
-      "Infrastructure: Architected a factory-pattern API for studio insights and implemented Redis-based concurrency controls to manage high-compute discovery workloads.",
+      "Developed and optimized Cohort Trend Insights scoring engines, implementing Exponential Moving Average (EMA) models and SUM metric support for high-dimensional time-series data.",
+      "Developed and maintained backend services for Insight Explorer.",
+      "Enhanced the AI agent's reasoning capabilities by implementing LangChain Deep Agent, utilizing a tool-driven prompt strategy to integrate Knowledge Lake for high-context data retrieval.",
     ],
   },
   {
