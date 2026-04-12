@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     location: "Munich, Germany",
     period: "Feb 2025 – Present",
     bullets: [
-      "Developed and optimized Cohort Trend Insights scoring engines, implementing Exponential Moving Average (EMA) models and SUM metric support for high-dimensional time-series data.",
+      "Implemented EMA and SUM metrics in Cohort Trend Insights, optimizing scoring engines.",
       "Developed and maintained backend services for Insight Explorer.",
       "Enhanced the AI agent's reasoning capabilities by implementing LangChain Deep Agent, utilizing a tool-driven prompt strategy to integrate Knowledge Lake for high-context data retrieval.",
     ],
@@ -60,7 +60,7 @@ export const experiences: Experience[] = [
     location: "Munich, Germany",
     period: "Sept 2023 – Nov 2024",
     bullets: [
-      "Developed and maintained a high-performance data aggregation application processing over 100,000 data points per hour, leveraging goroutines for concurrency.",
+      "Developed and maintained a high-performance data aggregation application processing over 100,000 data points per hour, utilizing goroutines to enhance concurrency.",
       "Implemented a metric service to measure key performance indicators like API calls, data processing, and database health; integrated with Datadog and AWS CloudWatch for real-time monitoring.",
       "Developed front-end essential features, enhancing product functionality and user experience.",
 
@@ -73,7 +73,7 @@ export const experiences: Experience[] = [
     period: "Apr 2023 – Sept 2023",
     bullets: [
       "Tutor for the course \"IN0005: Basics of Computer Architecture.\"",
-      "Led tutorials and helped students understand basic concepts of C programming and Linux systems.",
+      "Led C programming and Linux tutorials, improving student understanding.",
       "Graded project papers and implementations.",
     ],
   },
