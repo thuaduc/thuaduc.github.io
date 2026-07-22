@@ -39,19 +39,30 @@ export const personalInfo = {
   github: "github.com/thuaduc",
   linkedin: "linkedin.com/in/thua-duc-nguyen-014634221",
   summary:
-    "Computer Science Master's student at TUM with a focus on Artificial Intelligence. Experienced in full-stack software engineering and AI/ML systems. Currently working at Celonis on backend services for Insight Explorer.",
+    "Computer Science Master's student at TUM with a focus on Artificial Intelligence. Experienced in full-stack software engineering and AI/ML systems. Currently working at Arctis AI as a working student AI Engineer.",
 };
 
 export const experiences: Experience[] = [
   {
+    title: "Working Student – AI Engineer",
+    company: "Arctis AI",
+    location: "Munich, Germany",
+    period: "Jul 2026 – Present",
+    bullets: [
+      "Built end-to-end features and fixes across a full-stack AI SaaS product (React + Python), from core UI workflows to access control, exports, and pipeline reliability.",
+      "Contributed to an LLM-based document-analysis pipeline, writing and tuning prompts and optimizing for cost and accuracy through prompt caching and model provider evaluation.",
+      "Automated internal workflows with AI agents, including auto-generated team status reporting and a prototype for autonomous agent-driven PR creation.",
+    ],
+  },
+  {
     title: "Working Student – Software Engineer (AI/ML)",
     company: "Celonis",
     location: "Munich, Germany",
-    period: "Feb 2025 – Present",
+    period: "Feb 2025 – Jun 2026",
     bullets: [
-      "Implemented EMA and SUM metrics in Cohort Trend Insights, optimizing scoring engines.",
       "Developed and maintained backend services for Insight Explorer.",
       "Enhanced the AI agent's reasoning capabilities by implementing LangChain Deep Agent, utilizing a tool-driven prompt strategy to integrate Knowledge Lake for high-context data retrieval.",
+      "Implemented EMA and SUM metrics in Cohort Trend Insights, optimizing scoring engines.",
     ],
   },
   {
