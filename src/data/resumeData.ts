@@ -49,9 +49,9 @@ export const experiences: Experience[] = [
     location: "Munich, Germany",
     period: "Jul 2026 – Present",
     bullets: [
-      "Built end-to-end features and fixes across a full-stack AI SaaS product (React + Python), from core UI workflows to access control, exports, and pipeline reliability.",
-      "Contributed to an LLM-based document-analysis pipeline, writing and tuning prompts and optimizing for cost and accuracy through prompt caching and model provider evaluation.",
-      "Automated internal workflows with AI agents, including auto-generated team status reporting and a prototype for autonomous agent-driven PR creation.",
+      "Built an in-product AI copilot that reads and edits analysis results through chat, with a propose-review-apply flow, per-organization feature flags, per-user session isolation, and retry handling for LLM provider timeouts.",
+      "Rebuilt an LLM document-analysis pipeline: replaced a vision-model pass with a deterministic text-layer parser (LLM only for ambiguous fields, fail-closed fallback) and moved a hosted agent's work onto concurrent, chunked LLM calls, cutting a 61-page run from 33 to 8 min and 125 to 28 model calls while raising extraction accuracy from 22% to 98%.",
+      "Set up evaluation and observability for the pipeline: seeded evaluation fixtures, corrected scoring logic, and Langfuse tracing with full prompt logging, an SDK/API migration, and per-run links from the product.",
     ],
   },
   {
@@ -118,6 +118,15 @@ export const skills = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Conference Paper (First Author) – GaN HEMT Defect Detection",
+    description:
+      "First author of the nine-author paper \"Automated Micro-Scale Defect Detection in GaN HEMT Ohmic Contacts via Anchor-Free YOLO11 Architecture\", published at the 2026 Advanced Topics on Measurement and Simulation (ATOMS) conference. DOI: 10.1109/ATOMS69836.2026.11583134",
+    technologies: ["YOLO11", "Object Detection", "Computer Vision"],
+    topics: ["Research"],
+    date: "2026",
+    link: "https://doi.org/10.1109/ATOMS69836.2026.11583134",
+  },
   {
     title: "Humanoid Robotic Research Project",
     description:
